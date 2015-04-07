@@ -15,7 +15,7 @@ This game accounts this year's theme of light. When the space ship is wrecked an
 
 Different part(level) of the ship begin dark. As our droid explores the level, he returns power to different components. As the components turned on, the ship begins to lit back up. 
 \subsection{Initial Design}
-This is an exploration based platformer 2D game. The initial design focused on the randomised level generation. This aspect of the game-play is inspired from an exploration based platformer games such as \textit{Spelunky}.\\
+This is an exploration based platformer 2D game. This is a web-player game. The initial design focused on the randomised level generation. This aspect of the game-play is inspired from an exploration based platformer games such as \textit{Spelunky}.\\
 
 The game-play also aimed at the dynamic lighting system which changes the appearance of the ship. These dynamic lighting effects are generated  using placement of point, spot lights and normal maps for different game objects.
 \section{Technical Overview}
@@ -44,16 +44,22 @@ In the text files, the different letters represent different tile types such as 
 \begin{figure}[!htb]\centering
    \begin{minipage}{0.49\textwidth}
      \frame{\includegraphics[width=\linewidth]{room.png}}
-     \caption{Input text file}\label{Fig:Data1}
+     \caption{Input text file}\label{Fig:Data3}
    \end{minipage}
    \begin {minipage}{0.49\textwidth}
      \frame{\includegraphics[width=\linewidth]{room1.png}}
-     \caption{Unity Editor Output}\label{Fig:Data2}
+     \caption{Unity Editor Output}\label{Fig:Data4}
    \end{minipage}
 \end{figure}
 
 \subsection{Lighting System}
+To follow the theme of light, the game uses light to change the appearance of the level as game progresses. Unity gives the privilege to use 3 types of lights in the free version. The game uses two of these different lights which can be placed in the room using input comma separated text files. Text files can also take the light radius as an input.\\
+
+The first type of light is the spot light which is used for general illumination and ambience. The second type of light is the point light which is used to light specific areas. The lighting system has greater visual impact on the scene. The game also handles the tweaking in of ambient light level when the player is in different room. To create light effect on the game objects around a light source, normal mapped sprites are being used.
 \subsection{Security System}
+Since the space ship's security system is malfunctioning, the game-play implemented in a way to have defence measures and show this unusual behaviour of security system using different components such as  electric traps, alarm and security droid/enemy.\\
+
+The security system can be tripped when our robot re-activates components of the ship. When the ship enters an alarm state, the security droid and electric traps are activated. The security droid chases the maintenance droid(our Player robot) and drains his energy. The trap tiles shock the player robot with an electric bolt. The robot can deactivate the alarm by interfacing with another component.
 \subsection{Player Character}
 \section{Team Organisation}
 Scrum has been used for the product development which is an iterative and incremental agile software development methodology for managing product development.\\
