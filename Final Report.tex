@@ -3,7 +3,7 @@
 \usepackage{hyperref}
 \begin{document}
 \title{Final Report}
-\author{Yafie Qu\hspace{10 mm}TCD\\Hao Guan\hspace{10 mm}TCD\\Jeremiah Dunn\hspace{10 mm}TCD\\Saloni Sharma\hspace{10 mm}14327635\\CS7038: Group Project\\School of Computer Science and Statistics\\Trinity College Dublin\\\includegraphics[scale=1.5]{TCD.jpg}}
+\author{Yafie Qu\hspace{19 mm}14336420\\Hao Guan\hspace{10 mm}TCD\\Jeremiah Dunn\hspace{10 mm}TCD\\Saloni Sharma\hspace{10 mm}14327635\\CS7038: Group Project\\School of Computer Science and Statistics\\Trinity College Dublin\\\includegraphics[scale=1.5]{TCD.jpg}}
 \maketitle
 \section{Overview of the Project}
 \subsection{Background Story}
@@ -21,7 +21,7 @@ The game-play also aimed at the dynamic lighting system which changes the appear
 \section{Technical Overview}
 The game is made using \textit{Unity}. Game physics are implemented using Unity 2D physics engine. Normal maps and height maps are generated using \textit{SpriteLamp} and \textit{Crazy Bump}.
 \subsection{Level Generation}
-Each level begins with a 2D grid of an arbitrary size. \textit{Solution Path} is then generated through the level. In figure 1, First a point on the top of the grid is chosen to the start of the level. We then can step through the grid towards the bottom. Now a left/right is chosen randomly. There is then a random chance of stepping in this direction or stepping down. After stepping down, we chose our random direction again and repeat the process. When we reach the bottom floor the down probability is replaced by a probability of choosing the exit.\\
+Each level begins with a 2D grid of an arbitrary size. \textit{Solution Path} is then generated through the level. In figure \ref{Fig:Data1}, First a point on the top of the grid is chosen to the start of the level. We then can step through the grid towards the bottom. Now a left/right is chosen randomly. There is then a random chance of stepping in this direction or stepping down. After stepping down, we chose our random direction again and repeat the process. When we reach the bottom floor the down probability is replaced by a probability of choosing the exit.\\
 
 We then assign one of the different room types to each point on the \textit{Solution Path}. These room types correspond to the exits/entrances that each room needs. After this, we draw a boundary around the level. This way we can create a level using four different categories of exit types.
 
@@ -73,14 +73,16 @@ The team created high level overview of tasks called as Epics. The game project 
 
 These Epics were further broke down into smaller and manageable tasks called as Stories. The project was divided into 4 sprints. Each sprint lasted for 2 weeks. At start of each sprint, team had regular grooming sessions to estimate and re-estimate the stories and their implementation time. Task for each sprint will be chosen from the backlog based on their priority and requirements. In the grooming sessions, team looked through the backlog and see what stories they want to work on, assign story points, give them time estimates and flesh-out the descriptions or sub-task them as required. Time estimation for different tasks has been carried off by using voting system and then taking average of individual estimated time.\\
 
-Team had regular stand-ups, an average of thrice a week. Stand-ups were aimed to last for 10 minutes with any additional discussions happened in separate meeting outside this time.\\
+Team had regular stand-ups, an average of thrice a week. Stand-ups were aimed to last for 10 minutes with any additional discussions happened in separate meeting outside this time. The team had a different scrum master for each sprint from one of the team members.\\
 
 Team prioritized the project stories by keeping Level generation and core game on high priority and GUI on the least priority. This was implemented for an organized way of development so that major game-play could be implemented on time keeping an account of time spent on other assignments of coursework. During the course of project, team learned more about Unity and skills/efficiency of different team members.
 
 \section{Conclusion}
+The team has implemented almost all the tasks they have aimed for. Starting for the level generation with file handler to game logic implementation to GUI. Team also worked dynamically to add new features to make the game-play interesting for the player by adding enemy droid and the player energy system. Team showed good organizational skills to achieve its goals. The project has been successfully implemented the scrum methodology.\\
 
+There are also certain functionalities which could have been used as a library for future projects. One of them is Level Editor. A randomised level generation has been implemented which takes input from csv files which is also scalable. This implementation could be extended to make a standalone library for level editor in Unity.
 \section{You Tube Link}
 
 \section{Acknowledgements}
-
+We would like to express our very great appreciation to Dr. John Dingliana for his valuable and constructive suggestions during the planning and development of this game. We would also like to acknowledge our friend Ting Zhang for her ideas for the asset creation and to work in collaboration with the whole team.  
 \end{document}
