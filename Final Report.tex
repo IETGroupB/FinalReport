@@ -1,8 +1,9 @@
 \documentclass[11pt]{article}
 \usepackage{graphicx}
 \usepackage{hyperref}
+\setlength{\parindent}{0pt}
 \begin{document}
-\title{ CS7038: Group Project\\School of Computer Science and Statistics\vspace{0.6cm}\\Trinity College Dublin\vspace{0.4cm}\\\includegraphics[scale=1.5]{TCD.jpg}\vspace{0.6cm}\\Final Report}
+\title{School of Computer Science and Statistics \vspace{0.3cm}\\Trinity College Dublin\vspace{0.7cm}\\\includegraphics[scale=1.5]{TCD.jpg}\vspace{0.8cm}\\Final Report\vspace{0.3cm}\\CS7038: Group Project}
 \author{Yafie Qu, Hao Guan, Jeremiah Dunn, Saloni Sharma}
 \maketitle
 \section{Overview of the Project}
@@ -53,34 +54,44 @@ Rooms are 16x16 grids of tiles, there are different rooms for the different exit
 \end{figure}
 
 \subsection{Lighting System}
-To follow the theme of light, the game uses light to change the appearance of the level as game progresses. Unity gives the privilege to use 3 types of lights in the free version. The game uses two of these different lights which can be placed in the room using input comma separated text files. Text files can also take the light radius as an input.\\
+To follow the theme, the game uses light to change the appearance of the level as the game progresses. We use three different sources of light in our game.\\
 
-The first type of light is the spot light which is used for general illumination and ambience. The second type of light is the point light which is used to light specific areas. The lighting system has greater visual impact on the scene. The game also handles the tweaking in of ambient light level when the player is in different room. To create light effect on the game objects around a light source, normal mapped sprites are being used.
+The first type of light is the spot light which is used for general illumination and ambience. The second type of light is the point light which is used to light specific areas. They are also used as spinning red alarm lights. These have three hard levels of dark, dim and bright which changes as components near them become reactivated.\\
+
+The third method of lighting the scene is changing the ambient light level. As the player moves through the ship activating components the rooms towards the exit begin to light up. By varying the ambient light we can make dark areas harder to navigate and already explored areas brighter which helps highlighting where to go. \\
+
+To emphasise the light effect on the level, normal mapped sprites are being used so as lights turn on and red alarm lights spin the level appears to react to it.
 \subsection{Security System}
-Since the space ship's security system is malfunctioning, the game-play implemented in a way to have defence measures and show this unusual behaviour of security system using different components such as  electric traps, alarm and security droid/enemy.\\
+%Since the space ship's security system is malfunctioning, the game-play implemented in a way to have defence measures and show this unusual behaviour of security system using different components such as  electric traps, alarm and security droid/enemy.\\
 
-The security system can be tripped when our robot re-activates components of the ship. When the ship enters an alarm state, the security droid and electric traps are activated. The security droid chases the maintenance droid(our Player robot) and drains his energy. The trap tiles shock the player robot with an electric bolt. The robot can deactivate the alarm by interfacing with another component.
+The security system can be tripped when the player re-activates components of the ship. To turn it off the player needs to find another component of the ship and interface with it.\\
+
+ When the ship enters an alarm state, the security droid begins chasing the player and electric traps are activated. The trap tiles kill the player with an electric bolt if they come in contact with them. The security droid can chase and attack the player by draining his energy. This forces the player to move fast to find the next ship component while dodging traps.
+
 \subsection{Player Character}
-The player controls the character directly as a traditional 2D platformer. The game-play includes the energy system for the player. The energy also drains as the time goes which means the player has to speed up to complete the level. When activating the ship's components the player can recharge a portion of its energy. This also motivates the player to explore the ship and complete the level.\\
+The player controls the character directly as a traditional 2D platformer. The gameplay includes an energy system for the player. On re-activating a ship component, the player receives a portion of its energy back. The energy drains over time, encouraging the player to advance through the level.\\
 
-The camera is dragged along by the player and moves in 3-dimensional space. There are two lights attached to the player game object. The spot light attached is used to handle the navigation torch light in a dark room. The other is the point light is used to make the eye of the robot visible. The normal mapped sprites are used for the player character with bump mapping to add the depth to the scene which is visible when camera pans.
+The camera is dragged along by the player and moves in 3-dimensional space, the player can also hold the down button to move the camera down to check for traps lurking below drops. There are two lights attached to the player character. A spot light is used to light up the area in front of the player in dark rooms. A point light is used to draw attention to where the player is on screen and make him stand out.
 \section{Team Organisation}
-Scrum has been used for the product development which is an iterative and incremental agile software development methodology for managing product development.\\
+Scrum was used for the development of our game which is an iterative and incremental agile software development methodology for managing product development.\\
 
-The team has used Jira for project management and Git as a repository for synchronised progress across team and for  maintaining development using stable branches.\\
+The team has used Jira for project management and Git for source control, synchronising progress across team and for maintaining stable and development branches.\\
 
-The team created high level overview of tasks called as Epics. The game project idea is divided into these Epics: \textit{Level Generation}, \textit{GUI}, \textit{Core Game} and \textit{Character Controller}.\\
+The team created high level overview of tasks called Epics. The game different main components were divided into the following Epics: \textit{Level Generation}, \textit{GUI Creation}, \textit{Game Logic} and \textit{Player Character}.\\
 
-These Epics were further broke down into smaller and manageable tasks called as Stories. The project was divided into 4 sprints. Each sprint lasted for 2 weeks. At start of each sprint, team had regular grooming sessions to estimate and re-estimate the stories and their implementation time. Task for each sprint will be chosen from the backlog based on their priority and requirements. In the grooming sessions, team looked through the backlog and see what stories they want to work on, assign story points, give them time estimates and flesh-out the descriptions or sub-task them as required. Time estimation for different tasks has been carried off by using voting system and then taking average of individual estimated time.\\
+These Epics were further broke down into smaller, more manageable stories. The project was divided into 4 sprints. Each sprint lasted for 2 weeks. At start of each sprint we had grooming sessions to estimate or re-estimate times for different stories and give more detailed descriptions of their implementations. Stories which were considered to be overly-complicated were broken down into smaller sub-task which could be more accurately estimated. Time estimation for different tasks was decided by using a voting system and then averaging everyone's estimates.\\
 
-Team had regular stand-ups, an average of thrice a week. Stand-ups were aimed to last for 10 minutes with any additional discussions happened in separate meeting outside this time. The team had a different scrum master for each sprint from one of the team members.\\
+Team had regular stand-ups, an average of three times a week. Stand-ups were aimed to last for 10 minutes with any additional discussions happened in separate meeting outside this time. The team had a different scrum master for each sprint from each one of the team members.\\
 
-Team prioritized the project stories by keeping Level generation and core game on high priority and GUI on the least priority. This was implemented for an organized way of development so that major game-play could be implemented on time keeping an account of time spent on other assignments of coursework. During the course of project, team learned more about Unity and skills/efficiency of different team members.
+Team prioritized the project stories by keeping Level generation and core game play features as high priority features and features secondary to a functional prototype such as a GUI for starting the game as low priority features. This was implemented for an organized way of development so that major game-play could be implemented on time keeping an account of time spent on other assignments of coursework. During the course of project, team learned more about Unity and skills/efficiency of different team members.
 
 \section{Conclusion}
-The team has implemented almost all the tasks they have aimed for. Starting for the level generation with file handler to game logic implementation to GUI. Team also worked dynamically to add new features to make the game-play interesting for the player by adding enemy droid and the player energy system. Team showed good organizational skills to achieve its goals. The project has been successfully implemented the scrum methodology.\\
+The team has implemented the core game mechanics as planned. Starting from the level generation with file handler to the lighting system, the alarm system and the enemy AI droid. There is also a rought user interface for starting and ending games and transitioning between levels.\\
 
-There are also certain functionalities which could have been used as a library for future projects. One of them is Level Editor. A randomised level generation has been implemented which takes input from csv files which is also scalable. This implementation could be extended to make a standalone library for level editor in Unity.
+\section{Future Work}
+
+The way in which the game is created would allow for user created room files which would have been nice feature to explore if we had more time. A dedicated, visual, room editing tool was also discussed but the time-constraints of the project meant we had to stick with manually editing text files. 
+
 \section{You Tube Link}
 
 \section{Acknowledgements}
